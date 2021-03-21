@@ -3,6 +3,17 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size:cover;
+    font-family:Verdana, Tahoma, sans-serif;
    
-   
+}
+.card {
+    display: flex;
+    justify-content:space-between;
+    flex-direction: row;
+
+}
+
+#container {
+    display: flex;
+    justify-content: space-around;
 }
