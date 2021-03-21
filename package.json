@@ -21,7 +21,9 @@
   },
   "homepage": "https://github.com/myrlaf25/myTeamProfileGenerator#readme",
   "dependencies": {
+    "bootstrap": "^4.6.0",
     "inquirer": "^8.0.0",
-    "jest": "^26.6.3"
+    "jest": "^26.6.3",
+    "path": "^0.12.7"
   }
 }
