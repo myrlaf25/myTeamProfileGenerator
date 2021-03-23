@@ -140,34 +140,36 @@ function addEmployee(){
     name: "next"
 }
 ])
-
-.then(answers=>{
-    if(answers.next === true){
-        userInput(teamAnswers)
-    }else{
-        console.log("teamAnswers", teamAnswers)
-        let cardsHTML = generateHTML(teamAnswers)
-        writeHTML(cardsHTML)
-    }
-    
-}).catch(function(err){
+.then(function(confirmAnswer){
+    confirmAnswer.next ? userInput() : null
+})
+// .then(answers=>{
+//     if(answers.next === true){
+//         userInput(teamAnswers)
+//     }else{
+//         null
+//         console.log("teamAnswers", teamAnswers)
+//         let cardsHTML = generateHTML(teamAnswers)
+//         writeHTML(cardsHTML)
+//     }
+.catch(function(err){
     console.log(err);
 })
-// .then(function(confirmAnswer){
-//     confirmAnswer.next ? userInput() : null
-// })
-// .catch(function(err){
-//     console.log(err);
-// })
+    
 
-.then((answers) => {
-    console.log(answers);
-    const htmlPageContent = generateHTML(teamAnswers);
-    console.log(htmlPageContent);
-    fs.writeFile('sampleIndex.html', htmlPageContent, (err) =>
-    err ? console.log(err) : console.log('Successfully created index.html!')
-    );
-});
+// .catch(function(err){
+    //     console.log(err);
+    // })
+
+    .then((answers) => {
+        console.log(answers);
+        const htmlPageContent = generateHTML(teamAnswers);
+        console.log(htmlPageContent);
+        fs.writeFile('sampleIndex.html', htmlPageContent, (err) =>
+        err ? console.log(err) : console.log('Successfully created index.html!')
+        );
+    });
+    
 }
 // function writeSite(html){
 //     fs.writeFile("sampleIndex.html", html, err =>{
