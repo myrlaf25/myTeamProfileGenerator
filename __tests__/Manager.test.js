@@ -1,10 +1,10 @@
-const Manager = require('./lib/Manager.js');
+const Manager = require('../lib/Manager');
 
 
 // test for name, email, id, role validity
 
 
-const testManager = new Manager("marina", "m@email.com", 11 , "manager", "101")
+const testManager = new Manager("marina", 11 , "m@email.com", "manager", "101",)
 
 test('has a name', () => {
     expect(testManager.name).toEqual(expect.any(String))

@@ -1,13 +1,13 @@
 {
-  "name": "myTeamProfileGenerator",
+  
   "version": "1.0.0",
-  "description": "",
+  "description": "<img src=\"https://img.shields.io/badge/License-ISC-blue.svg\"></img>",
   "main": "index.js",
   "directories": {
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --verbose test/*"
   },
   "repository": {
     "type": "git",
@@ -26,5 +26,8 @@
     "jest": "^26.6.3",
     "loader": "^2.1.1",
     "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3"
   }
 }

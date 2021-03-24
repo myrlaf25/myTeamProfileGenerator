@@ -1,10 +1,10 @@
-const Engineer = require('./lib/Engineer.js');
+const Engineer = require('../lib/Engineer');
 
 
 // test for name, email, id, role validity
 
 
-const testEngineer = new Engineer("myrla", "myrla@gmail.com", 25 , "engineer", "myrla123")
+const testEngineer = new Engineer("myrla", 25 , "myrla@gmail.com",  "engineer", "testGithub")
 
 test('has a name', () => {
     expect(testEngineer.name).toEqual(expect.any(String))
@@ -27,8 +27,11 @@ test('Entered a github', () =>{
     objectKeys= Object.keys(testEngineer)
     gitHub = objectKeys[5]
 
-    expect(gitHub).toBe('github')
+    expect(gitHub).toBe('testGithub')
+    instanceof("should return the obects github", ()=>{
 
-    expect(testEngineer.github).toEqual(expect.any(String))
+        expect(testEngineer.getGithub()).toBe("testGithub")
+
+    })
 
 })

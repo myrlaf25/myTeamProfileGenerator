@@ -7,15 +7,12 @@ let GenerateHTML = (teamAnswersArr) => {
       teamAnswersArr[i].github ||
       teamAnswersArr[i].officeNumber;
     let objectKeys = Object.keys(teamAnswersArr[i]);
-    let lastAtt = objectKeys[5];
+    let lastAtt = objectKeys[4];
+    console.log(objectKeys);
     let finalAnswer = lastAtt + ": " + lastItem;
 
-    // if (lastAtt === undefined) {
-    //   finalAnswer = "";
-    //   console.log(finalAnswer);
-    // } else 
     if (lastAtt === "github") {
-      finalAnswer = `Github: <a href= 'https://github.com/${teamAnswersArr[5].github}'> ${teamAnswersArr[5].github}</a>`;
+      finalAnswer = `Github: <a href= 'https://github.com/${teamAnswersArr[0].github}'> ${teamAnswersArr[0].github}</a>`;
       console.log(finalAnswer);
     } else if (lastAtt === "officeNumber") {
       finalAnswer = `Office Number: ${teamAnswersArr[i].officeNumber}`;
@@ -24,10 +21,10 @@ let GenerateHTML = (teamAnswersArr) => {
       finalAnswer = `School: ${teamAnswersArr[i].school}`;
       console.log(finalAnswer);
     } else {
-      console.log(finalAnswer);
+      console.log(finalAnswer, "test");
     }
 
-    let { name, role, email, id,} = teamAnswersArr[i];
+    let { name, role, email, id } = teamAnswersArr[i];
     card += `<div class="card bg-primary" style="width: 18rem;">
          <div class="card-header">
             <h5 class="engineerName card-title text-white"> ${name} </h5>

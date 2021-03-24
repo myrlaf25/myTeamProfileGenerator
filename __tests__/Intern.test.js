@@ -1,10 +1,10 @@
-const Intern = require('./lib/Intern.js');
+const Intern = require('../lib/Intern');
 
 
 // test for name, email, id, role validity
 
 
-const testIntern = new Intern("sam", "sam@email.com", 56 , "intern", "uofa")
+const testIntern = new Intern("sam", 56, "sam@email.com", "intern", "uofa")
 
 test('has a name', () => {
     expect(testIntern.name).toEqual(expect.any(String))
@@ -12,7 +12,7 @@ test('has a name', () => {
 })
 
 test('has a valid email', () =>{
-    expect(testEngineer.email).toEqual(expect.stringContaining('@'))
+    expect(testIntern.email).toEqual(expect.stringContaining('@'))
 })
 
 test('has a role of Intern', () => {
