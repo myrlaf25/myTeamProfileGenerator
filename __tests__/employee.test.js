@@ -1,58 +1,25 @@
-const Employee = require("../lib/Employee");
+const Employee = require('./lib/Employee.js');
 
-describe("Employee", () => {
-  describe("Initialization", () => {
-    test("Can initialize an employee object", () => {
-      const e = new Employee();
 
-      expect(typeof e).toBe("object");
-    });
+// test for name, email, id, role validity
 
-    test("Can set name attribute with constructor", () => {
-      const name = "Clark";
-      const e = new Employee(name);
 
-      expect(e.name).toBe(name);
-    });
+const testEmployee = new Employee("bob", "bob@email.com", 101, "employee")
 
-    test("Can set id attribute with constructor", () => {
-      const id = 77;
-      const e = new Employee("Nick", id);
+test('has a name', () => {
+    expect(testEmployee.name).toEqual(expect.any(String))
+    expect(testEmployee.name.length).toBeGreaterThan(2)
+    
+    
+})
+test('has a valid email', () =>{
+    expect(testEmployee.email).toEqual(expect.stringContaining('@'))
+})
 
-      expect(e.id).toBe(id);
-    });
+test('has a role of employee', () => {
+    expect(testEmployee.role).toBe('employee')
+})
 
-    test("Can set email attribute with constructor", () => {
-      const email = "tbeauchamp@2u.com";
-      const e = new Employee("Nick", 77, email);
-
-      expect(e.email).toBe(email);
-    });
-  });
-
-  describe("getters", () => {
-    test("Can get name via getName() method", () => {
-      const name = "Nick";
-      const e = new Employee(name, 77, "tbeauchamp@gmail.com");
-
-      expect(e.getName()).toBe(name);
-    });
-    test("Can get id via getId() method", () => {
-      const id = 77;
-      const e = new Employee("Nick", id, "tbeauchamp@gmail.com");
-
-      expect(e.getId()).toBe(id);
-    });
-    test("Can get email via getEmail() method", () => {
-      const email = "tbeauchamp@gmail.com";
-      const e = new Employee("Nick", 77, email);
-
-      expect(e.getEmail()).toBe(email);
-    });
-    test("Can get role via getRole() method", () => {
-      const e = new Employee("Nick", 77, "tbeauchamp@gmail.com");
-
-      expect(e.getRole()).toBe("Employee");
-    });
-  });
-});
+test('Id is a number', () =>{
+    expect(testEmployee.id).toEqual(expect.any(Number))
+})
