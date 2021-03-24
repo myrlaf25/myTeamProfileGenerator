@@ -23,6 +23,14 @@ test('Id has value', () =>{
     expect(testManager.id).toEqual(expect.any(Number))
 })
 
-test('office number has value', () =>{
-    expect(testManager.officeNumber).toEqual(expect.any(Number))
+test('Entered a office', () =>{
+    objectKeys= Object.keys(testManager)
+    office = objectKeys[4]
+
+    expect(office).toBe('officeNumber')
+
+    expect(testManager.officeNumber).toEqual(expect.any(String))
+
 })
+
+

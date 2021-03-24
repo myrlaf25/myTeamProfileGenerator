@@ -25,13 +25,12 @@ test('Id has value', () =>{
 
 test('Entered a github', () =>{
     objectKeys= Object.keys(testEngineer)
-    gitHub = objectKeys[5]
+    github = objectKeys[4]
 
-    expect(gitHub).toBe('testGithub')
-    instanceof("should return the obects github", ()=>{
+    expect(github).toBe('github')
 
-        expect(testEngineer.getGithub()).toBe("testGithub")
-
-    })
+    expect(testEngineer.github).toEqual(expect.any(String))
 
 })
+
+
