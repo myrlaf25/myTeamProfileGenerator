@@ -1,4 +1,4 @@
-const Engineer = require('../lib/Engineer.js');
+const Engineer = require('./lib/Engineer.js');
 
 
 // test for name, email, id, role validity
