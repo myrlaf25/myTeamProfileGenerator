@@ -1,7 +1,7 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
 const path = require("path");
-
+const jest=require("jest")
 const Engineer = require("./lib/Engineer.js");
 const Manager = require("./lib/Manager.js");
 const Intern = require("./lib/Intern.js");
